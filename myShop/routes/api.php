@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/company', 'CompanyController@getCompanies');
+Route::get('/company/{id}', 'CompanyController@getCompanyById');
+Route::post('/company', 'CompanyController@createCompany');
+Route::delete('/company/{id}', 'CompanyController@deleteCompanyById');
